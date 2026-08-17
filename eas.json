@@ -1,17 +1,17 @@
 {
   "cli": {
-    "version": ">= 16.0.0",
-    "appVersionSource": "remote"
+    "version": "14.0.0"
   },
-  "image": "ubuntu-22.04-jdk-17-ndk-r27",
   "build": {
     "preview": {
       "distribution": "internal",
+      "image": "ubuntu-22.04-jdk-17-ndk-r27",
       "android": {
         "buildType": "apk"
       }
     },
     "production": {
+      "image": "ubuntu-22.04-jdk-17-ndk-r27",
       "android": {
         "buildType": "apk"
       }
