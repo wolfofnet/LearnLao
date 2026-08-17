@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF6900;
+  --color-primary-light: #FF8533;
+  --color-accent: #FF6900;
+  --color-success: #00C853;
+  --color-danger: #FF1744;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F5F5F5;
+  --color-on-surface: #1A1A1A;
+  --color-on-surface-2: #666666;
+  --color-on-surface-3: #999999;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F5F5F5;
+  color: #1A1A1A;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Dark mode */
+.dark body,
+.dark {
+  background: #0A0A0A;
+  color: #E5E5E5;
+}
+
+.dark .bg-surface { background: #1A1A1A; }
+.dark .bg-surface-2 { background: #111111; }
+
+.lao-text {
+  font-family: 'Noto Sans Lao', 'Phetsarath OT', 'Saysettha OT', sans-serif;
+}
+
+/* MIUI-style scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: pageIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card press effect */
+.card-press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-press:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+}
+
+/* MIUI gradient backgrounds */
+.gradient-orange {
+  background: linear-gradient(135deg, #FF6900 0%, #FF8533 50%, #FFB74D 100%);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #2196F3 0%, #42A5F5 50%, #64B5F6 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #9C27B0 0%, #AB47BC 50%, #CE93D8 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #00C853 0%, #69F0AE 100%);
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, #FF1744 0%, #FF5252 100%);
+}
+
+/* Frosted glass */
+.glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* MIUI button */
+.btn-mi {
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-mi::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.2s;
+}
+.btn-mi:active::after {
+  background: rgba(0,0,0,0.06);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

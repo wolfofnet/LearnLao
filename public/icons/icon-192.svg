@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6900"/>
+      <stop offset="50%" stop-color="#FF8533"/>
+      <stop offset="100%" stop-color="#FFB74D"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="32" fill="url(#bg)"/>
+  <rect x="16" y="12" width="160" height="60" rx="20" fill="url(#glow)"/>
+  <text x="96" y="92" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Noto Sans Lao', 'Phetsarath OT', sans-serif"
+        font-size="52" font-weight="700" fill="#FFFFFF">ອ</text>
+  <text x="96" y="140" text-anchor="middle" dominant-baseline="middle"
+        font-family="-apple-system, 'Segoe UI', sans-serif"
+        font-size="20" font-weight="600" fill="#FFFFFF" opacity="0.9">ລາວ</text>
+  <circle cx="160" cy="32" r="16" fill="#FFFFFF" opacity="0.2"/>
+  <circle cx="32" cy="160" r="10" fill="#FFFFFF" opacity="0.15"/>
+</svg>
