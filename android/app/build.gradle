@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     namespace = "com.laolearner.app"
     compileSdk = rootProject.ext.compileSdkVersion
+    // 指定 build-tools 版本，使用已安装的版本
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.laolearner.app"
         minSdkVersion rootProject.ext.minSdkVersion

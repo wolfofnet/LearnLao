@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useNavigation } from './hooks/useNavigation';
 import HomePage from './pages/HomePage';
 import AlphabetPage from './pages/AlphabetPage';
@@ -12,8 +13,24 @@ import NumberCalculatorPage from './pages/NumberCalculatorPage';
 import ScenarioPage from './pages/ScenarioPage';
 import ToneGamePage from './pages/ToneGamePage';
 
-function App() {
+interface AppProps {
+  onReady?: () => void;
+}
+
+function App({ onReady }: AppProps) {
   const { page, navigate, goBack } = useNavigation();
+  const readyCalled = useRef(false);
+
+  // React 首次渲染完成后通知父组件
+  useEffect(() => {
+    if (!readyCalled.current) {
+      readyCalled.current = true;
+      // 延迟一帧确保所有 DOM 元素已绘制
+      requestAnimationFrame(() => {
+        onReady?.();
+      });
+    }
+  }, [onReady]);
 
   switch (page) {
     case 'alphabet':

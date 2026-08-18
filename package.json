@@ -8,12 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:mobile": "set CAPACITOR=true && tsc && vite build && npx cap sync",
+    "build:mobile": "tsc && vite build --base=./ && npx cap sync",
     "mobile:android": "npm run build:mobile && npx cap open android",
     "mobile:ios": "npm run build:mobile && npx cap open ios",
     "android:apk": "npm run build:mobile && cd android && gradlew.bat assembleDebug",
-    "eas:build": "npm run build:mobile && npx eas build -p android --profile preview",
-    "eas:build:prod": "npm run build:mobile && npx eas build -p android --profile production"
+    "android:release": "npm run build:mobile && cd android && gradlew.bat assembleRelease"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.0",

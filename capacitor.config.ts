@@ -10,9 +10,12 @@ const config: Record<string, unknown> = {
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,
-      backgroundColor: '#ffffff',
+      backgroundColor: '#FF6900',
       showSpinner: true,
-      spinnerColor: '#8b5cf6',
+      spinnerColor: '#ffffff',
+      splashFullScreen: true,
+      splashImmersive: true,
+      autoHide: true,
     },
   },
 }

@@ -3,6 +3,9 @@
 buildscript {
     
     repositories {
+        // 国内镜像优先
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
         google()
         mavenCentral()
     }
@@ -17,8 +20,24 @@ buildscript {
 
 apply from: "variables.gradle"
 
+// 全局设置所有 Android 模块的 buildToolsVersion（避免 AGP 自动下载 35.0.0）
+subprojects {
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin('com.android.application') || 
+            project.plugins.hasPlugin('com.android.library')) {
+            project.android {
+                buildToolsVersion rootProject.ext.buildToolsVersion
+            }
+        }
+    }
+}
+
 allprojects {
     repositories {
+        // 国内镜像优先
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         google()
         mavenCentral()
     }
